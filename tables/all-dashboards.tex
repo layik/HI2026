@@ -1,0 +1,34 @@
+\begin{table*}[!p]
+\centering
+\caption{The table summarises visualization techniques, domains, measurements and data types used in EHR dashboards. Abbreviations: BP=Blood Pressure, QI=Quality Improvement, N=Nominal, Q=Quantitative, O=Ordinal, and T=Temporal}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}m{1.7cm}|>{\raggedright\arraybackslash}m{3.1cm}|>{\raggedright\arraybackslash}m{3.1cm}|>
+{\raggedright\arraybackslash}m{1.1cm}|X|}
+% {\raggedright\arraybackslash}m{1.1cm}|m{2.5cm}|}
+% {|m{2cm}|X|X|m{1cm}|m{2.5cm}|}
+\hhline{-----}\toprule
+ \textbf{Chart type} & \textbf{Domains} & \textbf{Measurements} & \textbf{Data type(s)} & \textbf{Reviewed publication(s)} \\ \hline
+% \midrule
+Bar & Stroke cohort, Pain management, Diabetes, Anaesthesia, Antibiotic prescribing QI, Diabetes Hospital Admissions, QI & Length of Stay (LOS), Patient counts, Pain score, Various (blood, lungs etc), Odds, Minutes, Statistics, Categorical counts & N, Q, T & \vspace{-4em} \cite{daley2013clinical}, \cite{elshehaly2020qualdash}, \cite{hester2019timely}, \cite{loorak2015timespan}, \cite{laurent2021development}, \cite{opie2021requirements},  \cite{stone2019dashboard}, \cite{wong2020dashboard}, \cite{linder2010} \\ \hline
+Box & Diabetes & Odds & Q & \cite{wong2020dashboard} \\ \hline
+Bar graph (bar meter) & Inter-operative Care & Various (Vital Signs, Glucose, Oxygen level etc) & Q & \cite{kheterpal2018impact} \\ \hline
+Gauge & Mental Health, Diabetes & Lipid, Renal function, Blood glucose, Other & Q & \cite{daley2013clinical}, \cite{yandrapalli2019development}  \\ \hline
+Glyph & Not known & Test levels (low to high) & N & \cite{linhares2022clinicalpath} \\ \hline
+Icon & Diabetes, ICU monitoring, QI record improvement & Status, Trend (up/down), Yes/No & Q, N & \cite{calzoni2020graphical}, \cite{koopman2011diabetes}, \cite{mcmenamin2011patient} \\ \hline
+Line & Hypertension, Stroke cohort & BP, Event instances, Minutes, Diagnostics, Categorical, Blood tests, Statistics & N, Q, T & \vspace{-2em}  \cite{fadel2021visual}, \cite{elshehaly2020qualdash},
+\cite{hester2019timely}, \cite{linhares2022clinicalpath}, \cite{loorak2015timespan}, \cite{opie2021requirements}, \cite{stone2019dashboard}, \cite{yandrapalli2019development} \\ \hline
+List & Elderly Care, Inter-operative, Stroke cohort, Diabetes & Diagnostics, Incident tracking, Dosage & N, Q, Text & \vspace{-2em} \cite{daley2013clinical}, \cite{kheterpal2018impact}, \cite{koopman2011diabetes}, \cite{loorak2015timespan} \\ \hline
+Organs & Inter-operative Care & Status (Green, Amber, Red) & N & \cite{kheterpal2018impact} \\ \hline
+Parallel Coordinates & General Practice & Multivariate & Q & \cite{de2015design} \\ \hline
+Pie & Elderly Care, QI & Observation Levels, Counts & N, Q & \cite{daley2013clinical}, \cite{elshehaly2020qualdash} \\ \hline
+Sankey & Stroke cohort, Pain management & Patient counts, Pain categories, Months & N, Q, T & \cite{loorak2015timespan}, \cite{opie2021requirements} \\ \hline
+Signal Element & Generic Surveillance & Miscellaneous & Q & \cite{kraus2018using} \\ \hline
+Scatter & Post Anaesthesia, ICU monitoring & Various (Vital Signs, Glucose, Oxygen levels etc), Length of Stay (LOS) & N, Q & \vspace{-2em} \cite{calzoni2020graphical}, \cite{schulz2020case} \\ \hline
+Table & Ventilator Management ICU, Pain management, Diabetes, Mental Health, BP control, Diabetes Hospital Admissions, Adverse Drug Events, Radiology, QI & Drug, Date/Interval, Event, Date, Yes/No, Length of Stay (LOS), Patient demographics, Events (admissions), Range of days, Patient counts, BP & Q, O, T, N, Text & \vspace{-5em}\cite{daley2013clinical}, \cite{hester2019timely}, \cite{mcmenamin2011patient}, \cite{wong2020dashboard}, \cite{morgan2008radiology}, \cite{koopman2011diabetes}, \cite{laurent2021development}, \cite{stone2019dashboard}, \cite{zaydfudim2009implementation}, \cite{opie2021requirements}, \cite{stinson2012health}, \cite{stone2019dashboard}  \\ \hline
+% ahern et al == stinson2012health
+Traffic lights & Diabetes, BP control, Radiology & Status, BP, Test status (due, done etc) & O, N & \cite{stinson2012health}, \cite{morgan2008radiology}, \cite{koopman2011diabetes} \\ \hline
+% UI buttons & Interoperative Care & Status (Green, Amber, Red) & N & \cite{kheterpal2018impact} \\ \hline
+% \hline
+
+\end{tabularx}
+\label{table:dashboards}
+\end{table*}

@@ -1,0 +1,110 @@
+% table should appear before the design sketches
+\input{tables/design-charts-v3}
+
+\section{Visualization design}\label{sec:design}
+
+\begin{figure}[!h]
+\centering
+  \begin{minipage}{0.49\textwidth}
+    \includegraphics[width=\linewidth]{figures/NQ-sharp-cropped.png}
+    \label{fig:figure1}
+  \end{minipage}\hfill
+  \begin{minipage}{0.49\textwidth}
+    \includegraphics[width=\linewidth]{figures/NTO-sharp_square.png}
+    \label{fig:figure2}
+  \end{minipage}
+    \caption{The figure shows six chart options on the top for combinations of nominal and quantitative (NQ) data and four (bottom) for combinations of nominal, temporal and ordinal (NTO) options.} 
+    \label{fig:design-iterations}
+\end{figure}
+
+% design sketches (Figure 4) is moved to the mock smr section to appear at the right place
+
+% \input{tables/channels-guidelines}
+
+In this section, the approach and results of generating design choices for the domain problem (clinicians conducting SMRs) are described. Generating these choices involved a two-step process: exploring the design space for design choices and evaluating them.
+
+\subsection{Design space exploration} \label{sec:design-explore-space}
+
+The exploration of the design space based on charts was carried out according to the design guidelines and principles within the visualization literature. In this step of the design study, how each of the chart design choices would be limited by guidelines such as those of Munzner \cite{munzner2014visualization} and Spence \cite{spence2001information} was checked. Specifically, visual encoding channels such as position, size, shape, etc. The context of magnitude (quantitative values) and identity (nominal values) of each chart option were checked and noted. For example, in the case of identity channels such as colour hue, a limit of seven bins is recommended \cite{munzner2014visualization}.
+
+% **could add a diagrame**
+
+To generate chart design options for each of the combinations of data types, a comprehensive list of charts was prepared from the charts appearing Tables \ref{table:dashboards} and \ref{table:ehr-star} as well as Data Visualization Survey's 2021 chart lists \cite{dvssurvey2021}. For each chart option in the list, the possible channel was recorded to encode each of the data type combinations (see Section \ref{sec:design-requirements}). For instance, the height of a bar chart could be used to encode quantitative as well as temporal data types. We then filtered the charts based on the matching data types of the data type combinations for the three categories of SMR data: conditions, medications and investigations.
+
+The final list of chart options for each of the categories of mock SMR questions is listed in Table \ref{table:design-charts-v3}. Each chart choice in this table appears in the two review publications (Dowding et al. \cite{dowding2015dashboards} and Wang and Larame \cite{wang2022ehr}) or the original publications cited by them.
+
+This step was followed by three rounds of pencil and paper sketches excluding the fourth round of finalising the design options for evaluation over several weeks. In each iteration, the focus was only on a combination of data types such as "NQ" (nominal, quantitative), and which category of questions the data would be visualized under (e.g. conditions). A pencil and paper sketching is more flexible and provides unrestricted space \cite{hakkarienn2000} for being creative without restrictions compared to writing code from the beginning. Figure \ref{fig:design-iterations} shows two sets of design choices for the two combinations of data types: nominal, quantitative (N, Q) and nominal, temporal and ordinal (N, T, O). These two sets are two of the six data combinations shown in Table \ref{table:design-charts-v3} (second column). 
+
+For each combination of data types, similar visualization channel encoding, such as the use of area for the same data type using different chart type, was avoided. This also enabled us to discard "similar" design options (chart types) from the initial large list of options. For example, in the design choices for nominal, temporal and ordinal (N, T, O) data types in Figure \ref{fig:design-iterations} (right), a bar chart would be too similar to a Gantt chart and that is why the bar chart does not appear as a design choice, as Gantt charts were deemed to be more appropriate.
+
+% The next step was to evaluate these chart options which will be discussed next.
+
+% \begin{figure}[ht]
+%   \centering
+%   \includegraphics[width=8cm]{figures/design-process.png}
+%   \caption{Figure caption here.}
+%   \label{fig:design-process}
+% \end{figure}
+
+% now in teaser
+% \begin{figure*}[!h]
+% \centering
+%   \begin{minipage}{\textwidth}
+%     \includegraphics[width=\linewidth]{figures/indiv-results.png}
+%     \label{fig:indvid-results}
+%   \end{minipage}
+%     \caption{The individual results of all of the charts design choice evaluation. Each stacked bar chart is marked with the question number within the evaluation and the category of data types for which the design choices were shown to the participants.} 
+%     \label{fig:indvidual-results}
+% \end{figure*}
+
+\subsection{Design choice evaluation}
+% The next step of the design space exploration process was to evaluate the chart choices.
+
+% \begin{figure}[ht]
+%   \centering
+%   \includegraphics[width=7cm]{figures/q4-n.png}
+%   \caption{The figure shows three design choices for the category of nominal data type. The design choices are all drawn within the same spaces on A4 sheets before being scanned. }
+%   \label{fig:q4-n}
+% \end{figure}
+
+\subsubsection{Method}
+The participants for the evaluation were chosen to be both domain experts (co-authors) and members of the research project team. All of the team were invited to participate and 18 responded.
+
+In terms of materials, the final designs were generated for the list of charts for each of the combinations listed in Table \ref{table:design-charts-v3}. These were drawn within equal-sized on A4 sheets and scanned. Each chart was populated with three rows of data. The same quantitative values were repeated to create a list of 10 in the case of box, dot and violin charts for the quantitative data type. This was deemed a minimal data set to assess the effectiveness of each chart and the assumption that a chart failing at this minimal level would likely be unsuitable for a larger quantity of data.
+
+The procedure for evaluating the design choices involved presenting the charts to participants using Microsoft Forms. The form contained two questions about the participant's self-identified "profession" and "years in the current profession". There were also six questions; one for each combination of data types in Table \ref{table:design-charts-v3}. Each of these questions included an image with the design choices for the combination of data such as those in Figure \ref{fig:design-iterations}. For each of the six questions, the participants were asked this question: "To what extent do you agree with the statement: 'The chart effectively communicates the information it contains'?". There was also this instruction to answer the question "Select 'Agree' if you think the charts effectively communicate the data, 'Neutral' if you are uncertain or find some charts more effective than others, and 'Disagree' if you think the chart fails to communicate the data effectively." The responses were collected using Microsoft Forms for analysis which will be discussed next.
+
+\subsubsection{Results}
+
+A total of 18 participants returned the questionnaire. 
+Individual results for each of the six combinations of data types showed clear winners, such as histograms having no "disagree" answers when looking at quantitative data, and likewise, the Gantt chart having no "disagree" answers in the category of nominal and temporal data types as shown in Figure \ref{fig:indvidual-results}. Notably, violin plots received few (3 out of 18) "agree" answers in the quantitative data combination, and donut (doughnut) chart had no "agree" answers in the nominal and temporal data type combination.
+
+\begin{figure*}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{figures/indiv-results.png}
+  \caption{The individual results of the charts design choice evaluation. Each chart is labelled with the question number within the questionnaire and the category of data types for which the design choices were shown to the participants.}
+  \label{fig:indvidual-results}
+\end{figure*}
+
+Looking at each question and starting with question three in Figure \ref{fig:indvidual-results}, the histogram had the highest "agree" responses given the small data set used in the study. In question four, when looking at the choices for showing a list of names (nominal only), the difference between "agree" answers for "List (Table" and a pie chart is small (66\% versus 61\%). Question five included the design choices for nominal and quantitative data using seven different chart types. Bar charts had the highest "agree" answers. Question six was showing nominal and temporal data, only Gantt and line charts had no "disagree" answers, while donut chart was the only choice with no "agree" answers. Question seven included four design choices for nominal, temporal and ordinal data, only scatter plots received less than 50\% "agree" answers. Question eight used the same four choices from question seven to visualise nominal, temporal and quantitative data. All but Gantt charts received less than 50\% "agree" responses.
+
+
+\subsubsection{Discussion}
+The evaluation aimed to find which charts were effective for representing the simple data set, providing a shortlist of design choices for further investigation.
+A starting point was to include each chart where at least 50\% of participants agreed that the chart was effective for a given combination of data types.
+However, there were exceptions.
+
+The shortlist for quantitative data comprised a histogram, box plot and dot plot. However, box plots only show unimodal distributions and histograms may hide sophistcated data distributions when the default number of bins (e.g., 10) is used.
+By contrast, violin plots are designed for multimodal distributions and those often occur in health data~\cite{ruddle2024tasks}.
+It is also worth noting that pie and donut charts are essentially the same as each other, except that a donut has a hole in the middle.
+However, donut charts are less common so people are less famiiar with them, which explains why fewer participants agreed that a donut would be effective for the data type combinations where donut and pie charts were investigated. 
+
+The final shortlist contained the following:
+\begin{itemize}
+  \item Quantitative: Histogram, box, dot and violin
+  \item Nominal: List (Table) and pie
+  \item Nominal and quantitative: Bar, table and scatter
+  \item Nominal and temporal: Gantt chart and line
+  \item Nominal, temporal and ordinal: Gantt chart, line and heatmap
+  \item Nominal, temporal and quantitative: Gantt chart
+\end{itemize}

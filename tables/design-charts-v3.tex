@@ -1,0 +1,20 @@
+\begin{table}[h]
+\centering
+% \captionsetup{justification=justified, width=\textwidth}
+\captionsetup{justification=justified}
+\caption{Table shows categories of data shown during SMRs, combinations of data types, and the final list of charts to generate design choices. The data types are coded as: N = Nominal, T = Temporal, Q = Quantitative and O = Ordinal}
+\begin{tabular}{|m{2cm}|m{2.1cm}|m{2.2cm}|}
+\hline
+\textbf{Categories} & \textbf{Combinations of data types} & \textbf{Final chart options} \\
+\hline
+% \midrule
+Investigations & Q (Quantity) & Box, Dot (Wilkinson), Histogram, Violin \\ \hline
+Conditions, Medications, Investigations & N (Name) & Donut, Pie and List (Table) \\ \hline
+Investigations & N, Q (Name, Quantity) & Bar, Scatter, Heatmap, Table, Pie, Donut, Radar \\ \hline
+Conditions, Medications & N, T (Name, Date) & Gantt, Pie, Line, Donut, Scatter, Heatmap \\ \hline
+Conditions & N, T, O (Name, Date, Severity) & Gantt, Heatmap, Line, Scatter \\ \hline
+Investigations & N, T, Q (Name, Date/time, Quantity) & Gantt, Heatmap, Line, Scatter \\ \hline
+\end{tabular}
+
+\label{table:design-charts-v3}
+\end{table}

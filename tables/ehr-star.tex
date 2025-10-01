@@ -1,0 +1,30 @@
+\begin{table*}[!h]
+\centering
+ % from the Wang and Laramee review \cite{wang2022ehr} (Table 19 in their work). In the Wang and Laramee review bar, line and pie charts are grouped as "standard 2D".
+\caption{The table shows the list of visualization techniques used in publications matching our criteria and aims. It also shows measurements visualised in the context of the present work (condition, medication, investigation) and the datatype of the measurements. Abbreviations: C=Condition, M=Medication, I=Investigation (tests or observations), N=Nominal, Q=Quantitative, O=Ordinal, and T=Temporal}
+\begin{tabularx}
+{\textwidth}{|m{1.7cm}|m{2cm}|X|m{1.1cm}|X|}
+\hhline{-----}
+\toprule
+ \textbf{Chart type} & \textbf{Condition, Medication, Investigation} & \textbf{Measurement(s)} & \textbf{Data type(s)} & \textbf{Reviewed publication(s)} \\ \hline
+% \midrule
+Bar, Pie, Line & C, I & Dates, States (biological, treatment), Blood tests  & N, Q, T, O & \cite{bernard2015visual}, \cite{bernard2018using}, \cite{kwon2020dpvis}, \cite{zhang2018idmvis} \\ \hline
+% Beeswarm & C, M, I & Visit, State and Age & Q, N & \cite{kwon2020dpvis} \\ \hline
+Box & I & Prostate-Specific Antigen, Insulin and carbohydrates & Q & \cite{bernard2018using}, \cite{jin2020carepre}. \cite{zhang2018idmvis} \\ \hline
+Bubble & C, M, I & Events \& duration & T, N & \cite{kamaleswaran2016physioex} \\ \hline
+Chord & C, M, I & State transition (weighted),  & N & \cite{kwon2020dpvis}, \cite{alemzadeh2020visual} \\ \hline
+Glyph & C, M, I & State transition, Organs/abnormality, Events, Patient state (diagnosis, treatment, visits) & N & \cite{gotz2014decisionflow}, \cite{kwon2020dpvis}, \cite{jin2020carepre}, \cite{guo2017eventthread}, \cite{zhang2018idmvis} \\ \hline
+Histogram & M, I & Medication, Status Counts & Q & \cite{bernard2018using}, \cite{kwon2018retainvis} \\ \hline
+Heatmap & C, M, I & Event relationship, Physio data (heart rate, oxygen flu) & N, Q, T & \cite{bernard2018using}, \cite{kamaleswaran2016physioex}, \cite{wang2021lettervis}, \cite{loorak2015timespan} \\ \hline
+Parallel Coordinates & I & BMI, Glucose Level & Q & \cite{alemzadeh2020visual} \\ \hline
+Parallel sets & C, M, I & Event relationship, State transition (weighted) & T, N & \cite{gotz2014decisionflow}, \cite{kwon2020dpvis}, \cite{jin2020carepre} \\ \hline
+Sankey & C, M, I & Event sequence progression, Events & T, N & \cite{gotz2014decisionflow}, \cite{wongsuphasawat2011outflow} \\ \hline
+Scatter & M, I & Missing data, Dosage, Date, Phone, Sex & N & \cite{alemzadeh2020visual}, \cite{wang2021lettervis} \\ \hline
+Stream graph & C, M, I & Events (classification) \& duration, Time (seroconversion) & T, N & \cite{kamaleswaran2016physioex}, \cite{kwon2020dpvis} \\ \hline
+% Timeline & C, M, I & Event & T, N & \cite{guo2017eventthread} \\ \hline
+Treemap & C, M, I & Event freequency & Q, N & \cite{guo2018visual}, \cite{guo2017eventthread} \\ \hline
+
+\end{tabularx}
+
+\label{table:ehr-star}
+\end{table*}

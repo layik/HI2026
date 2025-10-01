@@ -1,0 +1,14 @@
+\section{Introduction}
+General practitioners (GPs) and pharmacists conduct Structured Medication Reviews (SMRs) \cite{madden2022early} as "a comprehensive and clinical review of a patient’s medicines and detailed aspects of their health" \cite{nhs2021}. SMRs involve consultation with patients, considering their medical history (diagnoses, symptoms, current medication, investigations, etc.) ~\cite{madden2022early}.
+In the UK medical history is accessed via an electronic health record (EHR) system such as EMIS \cite{emishealth2023}. Such systems provide detailed information about a patient’s medical history but information that is needed to conduct SMRs in complex patients is not presented in a manner that is time efficient.
+
+A wide variety of techniques have been applied to visualise EHRs of individual patients and cohorts of patients in previous research~\cite{wang2022ehr,dowding2015dashboards}, but not for the purpose of conducting medication reviews. The present work follows a design study methodology~\cite{sedlmair2012design} to select candidate charts for visual histories of patient records for SMRs. 
+Then, four mock patient SMRs were carried out to establish user requirements in terms of: (a) questions that GPs and or pharmacists typically want to answer in an SMR, and (b) the attributes of medical histories that are required.
+A design space was determined by mapping the attributes to the data types that different types of visualization support.
+Low-fidelity (paper and pencil) prototypes were used to evaluate the design choices and produce a shortlist of visualizations for groups of SMR questions.
+
+This paper makes three contributions based on the methodology \cite{sedlmair2012design} followed.
+First, problem characterisation, that is, analysing and data abstraction using mock SMRs.
+Second, it presents candidate visualizations for six combinations of data types. Third, a Python package that implements the outcomes \cite{dynairxvis}.
+
+The rest of this work is structured as follows: It starts with an extensive background review of techniques (charts) used to visualise EHR. Then it summarises the work done to understand the nature of SMRs using the four mock SMRs. Section \ref{sec:design} then describes the design space exploration approach and the outcomes and one round of validation of our design choices. The last section outlines the implementation of the design study.

@@ -1,0 +1,19 @@
+\newcommand*\rot{\rotatebox[origin=c]{90}}
+\renewcommand{\arraystretch}{1.5} 
+
+\begin{table*}
+\centering
+\begin{tabularx}{\textwidth}{|p{2cm}|p{1cm}|*{7}{X|}*{3}{X|}}
+\hhline{------------}
+ & & \multicolumn{7}{|c|}{Magnitude channels} & \multicolumn{3}{c|}{Identity channels} \\ \cline{3-12}
+Data Category & Datatype combinations & \rot{Position (?)} & \rot{Size - length (?)} & \rot{Size - area (?)} & \rot{Angle (?)} & \rot{\parbox{25mm}{Luminance (5) \\ \cite[p.223]{munzner2014visualization}}}& \rot{\parbox{25mm}{Saturation (3) \\ \cite[p.223]{munzner2014visualization}}} & \rot{\parbox{25mm}{Transparency (2) \\ \cite[p.225]{munzner2014visualization}}} & \rot{\parbox{25mm}{Hue (7) \\ \cite[p.224]{munzner2014visualization}}} & \rot{\parbox{25mm}{Texture (24) \\ \cite[p.240]{munzner2014visualization}}} & \rot{\parbox{25mm}{Shape (24) \\ \cite[p.238]{munzner2014visualization}}} \\ \hline
+Con. Med. Inv. & N & &  &  &  &  & & & N &N &N \\ \hline
+Inv. & Q &Q & Q & Q & Q &Q? & Q? & Q? &  & & \\ \hline
+Con. Med. & N,T & & T & T & T &  & & & N &N &N \\ \hline
+Inv. & N,Q &Q & Q & Q & Q &Q? & Q? & Q? & N &N &N \\ \hline
+Con. & N,T,O & &TO &TO &TO & O &O &O & N &N &N \\ \hline
+Inv. & N,Q,T &Q &QT &QT &QT & Q?T & Q? & Q? & N &N &N \\ \hline
+\end{tabularx}
+\caption{The table shows categories of questions grouped by their data attributes in the first two columns, mapped to possible representation channels and channel limitations within visualization guidelines. The number next to channel name is the reported limit while the question mark indicates lack or no limit. Data types are encoded as: N = Nominal, Q = Quantitative, T = Temporal and O = Ordinal.}
+\label{table:channels-guidelines}
+\end{table*}

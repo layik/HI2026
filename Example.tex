@@ -1,0 +1,125 @@
+\documentclass[a4paper,twoside]{article}
+
+\usepackage{epsfig}
+\usepackage{subcaption}
+\usepackage{calc}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{multicol}
+\usepackage{pslatex}
+\usepackage{apalike}
+\usepackage{algorithm2e}
+\usepackage[bottom]{footmisc}
+\usepackage{SCITEPRESS}     % Please add other packages that you may need BEFORE the SCITEPRESS.sty package.
+% layik added
+\usepackage{tabularx}
+\usepackage{hhline}
+\usepackage{pgfplots}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[none]{hyphenat}
+\usepackage{caption}
+\usepackage{longtable}
+\usepackage[T1]{fontenc}
+\usepackage{array}
+
+% % no package needed
+% \makeatletter
+% % Make \cite print just the label (no brackets) inside our macro
+% \newcommand{\mcite}[1]{%
+%   (%
+%     \begingroup
+%       \let\@cite\mc@citeonly % locally override how \cite formats
+%       \def\mc@sep{}%
+%       \@for\mc@x:=#1\do{%
+%         \mc@sep\cite{\mc@x}%
+%         \def\mc@sep{; }%
+%       }%
+%     \endgroup
+%   )%
+% }
+% % Standard \@cite has signature \@cite{<label>}{<note>}
+% \newcommand{\mc@citeonly}[2]{#1} % emit just the label, no surrounding brackets
+% \makeatother
+
+\begin{document}
+
+\title{Patient History Visualization for Structured Medication Reviews: a design study}
+
+% \author{\authorname{
+% L. Hama\sup{10}\orcidAuthor{0000-0003-1912-4890}, 
+% R.A. Ruddle\sup{10}\orcidAuthor{0000-0001-8662-8103}, 
+% A.S. Abuzour\sup{1,2}\orcidAuthor{0000-0002-4073-4346}, 
+% M. Abaho\sup{3}\orcidAuthor{0000-0001-5433-5904}, 
+% A. Aslam\sup{2,8}\orcidAuthor{0000-0002-2654-4255}, 
+% D. Bollegala\sup{3}\orcidAuthor{0000-0003-4476-7003}, 
+% A. Clegg\sup{1,2}\orcidAuthor{0000-0001-5972-1097}, 
+% M. Gabbay\sup{3}\orcidAuthor{0000-0002-0126-8485}, 
+% F.S. Mair\sup{5}\orcidAuthor{0000-0001-9780-1135}, 
+% M. O’Connell\sup{6}\orcidAuthor{0000-0001-9658-495X}, 
+% S. Relton\sup{2,8}\orcidAuthor{0000-0003-0634-4587}, 
+% E. Shantsila\sup{3}\orcidAuthor{0000-0002-2429-6980}, 
+% M. Sperrin\sup{6}\orcidAuthor{0000-0002-5351-9960}, 
+% S.A. Wilson\sup{3}\orcidAuthor{0000-0002-7959-052X}, 
+% A.A. Woodall\sup{3,4}\orcidAuthor{0000-0003-2933-0508}, 
+% I. Buchan\sup{3}\orcidAuthor{0000-0003-3392-1650}, 
+% L.E. Walker\sup{3}\orcidAuthor{0000-0002-3827-4387}
+% }}
+
+% \affiliation{\sup{1}Bradford Teaching Hospitals NHS Foundation Trust, Bradford, UK}
+% \affiliation{\sup{2} School of Medicine, University of Leeds, Leeds, UK}
+% \affiliation{\sup{3}University of Liverpool, Liverpool, UK}
+% \affiliation{\sup{4}Directorate of Mental Health and Learning Disabilities, Powys Teaching Health Board, Bronllys, UK}
+% \affiliation{\sup{5}School of Health and Wellbeing, University of Glasgow, Glasgow, UK}
+% \affiliation{\sup{6}University of Manchester, Manchester, UK}
+% \affiliation{\sup{8}Leeds Institute for Data Analytics, University of Leeds, Leeds, UK}
+% \affiliation{\sup{10}School of Computing, University of Leeds, Leeds, UK}
+
+% \email{layik.hama@gmail.com}
+
+\keywords{Patient History Visualization, deprescription visualization}
+
+\abstract{General practitioners and pharmacists conduct Structured Medication Reviews (SMRs) to optimise prescribing for people with multiple long-term conditions (MLTC), but electronic health record systems often present information in fragmented lists and tabs. We set out to design and validate chart-based visual summaries of patient history data that can support integrated dashboards for SMRs. Using a design-study methodology, we reviewed existing approaches to visualising electronic health records, conducted four mock SMRs, and derived a data abstraction linking clinicians’ questions to patient attributes. Using visual encoding principles, we used 14 candidate chart types
+and sketched low-fidelity designs. A questionnaire was then used to ask eight clinicians and eleven
+visualization-literate researchers to rate how effectively each chart communicated its data. Across six combinations of data types, 11 chart types were consistently judged suitable for communicating key information. Finally, we implemented the outcomes of the study in a Python package using 2.1M records from the Clinical Practice Research Datalink (CPRD).
+}
+
+\onecolumn \maketitle \normalsize \setcounter{footnote}{0} \vfill
+
+\input{sections/introduction.tex}
+
+
+\input{sections/relatedwork.tex}
+
+\input{sections/mocksmrs}
+
+% \input{sections/requirements}
+
+\input{sections/design}
+
+\input{sections/cprd}
+
+\input{sections/conclusion}
+
+
+\section*{\uppercase{Acknowledgements}}
+
+The acknowledgments section is redacted for the double-blind review purpose.
+% This study is funded by the National Institute for Health Research (NIHR) under its Programme Artificial Intelligence for Multiple and Long-Term Conditions (NIHR 203986). The views expressed are those of the author(s) and not necessarily those of the NIHR or the Department of Health and Social Care.
+% The authors acknowledge the use of the LASER platform, assistance provided by the Data Analytics Team in Leeds Institute for Data Analytics (University of Leeds).
+% \textbf{Thank you to + other attributes before publication.}
+
+
+\bibliographystyle{apalike}
+{\small
+\bibliography{example}}
+
+
+% \section*{\uppercase{Appendix}}
+
+% If any, the appendix should appear directly after the references without numbering, and not on a new page. To do so please use the following command: \textit{$\backslash$section*\{APPENDIX\}}
+
+\end{document}
+

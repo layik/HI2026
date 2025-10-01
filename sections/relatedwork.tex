@@ -1,0 +1,42 @@
+% relatedwork2
+
+\section{Related Work}\label{sec:relatedwork}
+\input{tables/all-dashboards}
+% \input{tables/all-dashboards-brief}
+
+The present work aims to develop visual summaries of patient medical histories in the context of SMR. Expert input from clinicians who are part of the project team and focus groups with other clinicians shows that these summaries need to contain longitudinal information on the conditions, medications, and investigations of a patient.
+
+From the focus group work \cite{abuzour2023dynairx}, the DynAIRx project team has identified items called a wish list that stress the need for a timeline to present visual summaries of the combined patient record. The focus group participants have identified the need to visualise changes over time and prescription timelines, among others.
+
+Visual summaries also need to present the information in a much easier to digest form than the multiple tabs and click-heavy user interfaces of general-purpose EHR systems \cite{abuzour2023dynairx}. 
+% The main finding to the best of our knowledge is that there is no work that is closely related to the present work.
+To our knowledge, there has been no previous research on how to visualise patient histories specifically for SMRs.
+However, a considerable body of work has investigated dashboards for EHRs~\cite{dowding2015dashboards} and EHR visualization techniques~\cite{wang2022ehr}.
+We approached the related work using a semi-systematic method \cite{snyder2019literature}, combining two review papers with forward citation tracking. The first was a review by Dowding et al. \cite{dowding2015dashboards} and the second was a state-of-the-art review by Wang and Laramee \cite{wang2022ehr}. The criteria used to select the publications from these sources were: the work uses patient-level or cohort EHR, and is developed for clinical use.
+
+\input{tables/ehr-star}
+% \input{tables/ehr-star-brief}
+
+\subsection{EHR Dashboards}\label{section:ehr-dashboards}
+
+% Dashboards are used for "data-driven decision making" \cite{sarikaya2018we} and are increasingly integrated into various software applications, first appearing in the 1990s as "a graphical summary of various types of information" \cite{cahyadi2016beyond}. Dashboards in clinical care are subject to various health informatics research, including some design recommendations \cite{brown2016interface} in the context of audit and feedback dashboards, such as the use of line graphs to show trends including relevant nonclinical data \cite{brown2016interface}.
+
+%rar% The second aim of this review was to review dashboards and visualizations in wider healthcare environments.
+Table \ref{table:dashboards} lists the publications, visualization techniques that appear in them, the healthcare domain, the healthcare record measurements for which the techniques were used, and the datatypes of those measurements.
+The first observation from the publications in Table \ref{table:dashboards} is that the technique appearing the most is the use of tables along with bar and line charts. Some dashboards combine tables with other visualization techniques such as bars, pie, and traffic light colours \cite{koopman2011diabetes,stinson2012health,daley2013clinical}.
+
+The second observation is that we can see some uncommon visualization techniques in Table \ref{table:dashboards}. For example, the use of what is called a "signal element" \cite{schulz2020case} is designed to create dashboards using the Arden syntax\cite{hripcsak1994writing} which is a markup language for sharing medical language. An important concept in EHR data is a threshold or a range of thresholds for particular measurements. This explains the appearance of a "bar graph (bar meter)" in the chart-type column of Table \ref{table:dashboards}.
+
+The third observation is the variety of health record measurements appearing in the various dashboards listed in Table \ref{table:dashboards}. Unsurprisingly, there are time (date/interval, range of days or duration), state, trend, events, and in many cases combinations of such measurements. Visualization of status could be of a test being tracked (due, done, etc.) \cite{stinson2012health}, or the status of an organ \cite{kheterpal2018impact,calzoni2020graphical}.
+
+The fourth observation is about rare techniques such as glyphs for patient visits (as noted by Wang and Laramee \cite{wang2022ehr}). One of the dashboards \cite{kheterpal2018impact} uses an outline of the human upper body organs as the main view of their dashboard with bar graphs of measurements such as temperature and various blood test measurements. A single icon traffic light combined with text values for various measurements is also used to indicate status \cite{kraus2018using}. Another visualization technique in the context of the Intensive Care Unit (ICU) monitoring dashboard is the use of icons to represent the trend of a particular measurement over time \cite{calzoni2020graphical}. The technique used is a single-value scatter plot that represents the measurement in both its state (normal/abnormal) and its quantity but also where the measurement lies within the ranges of clinical guidelines over time. Such visualization would mean that even if multiple measurements cannot be combined in a single plot, there could be multiple plots in a more compact and "readable" summary visualization.
+
+\subsection{EHR Visualization Techniques}\label{section:ehr-techniques}
+
+The techniques listed in Table \ref{table:ehr-star} are those that appeared in a publication that matched the criteria for the present work. The second column of Table \ref{table:ehr-star} lists the categories (conditions, medications, and investigations). % This study uses the same three categories in the mock SMRs (see Section \ref{sec:understanding-smrs}).
+
+Finally, looking through Table \ref{table:dashboards} and Table \ref{table:ehr-star}, the chart types that appear in both are bar, line, scatter, box (box-and-whisker), glyph-based displays, parallel coordinates, and Sankey diagrams. This is expected from the reviewed dashboards in the case of Table \ref{table:dashboards}, but the Wang and Laramee review focuses on the wider area of visualising EHR data. Tables as a visualization technique in the case of dashboards are not considered or do not appear in Wang and Laramee's review \cite{wang2022ehr}.
+
+% \subsection{Summary}\label{sec:related-work-summary}
+
+% Analysis of the existing literature revealed a diverse array of chart types that are used for the presentation of patient-level and cohort data, laying a foundational understanding necessary before any design space exploration is carried out. This review is followed by a close understanding of the domain problem (SMRs), which will be discussed next as part of the "discover" stage of the methodology.

@@ -14,10 +14,12 @@
 %     \label{fig:cprd-nt-gantt-line}
 % \end{figure}
 
-The final step of our design study was to implement and illustrate some of the shortlist charts using primary care data about patients' conditions from Clinical Practice Research Datalink (CPRD)~\cite{cprd}.
-The mock SMR questions about conditions involved half of the combinations of data types (see Table \ref{table:design-charts-v3}) -- the other three data type combinations only occurred for investgations and so their implementation for SMRs is left to future work.
+% The mock SMR questions about conditions involved half of the combinations of data types (see Table \ref{table:design-charts-v3}) -- the other three data type combinations only occurred for investgations and so their implementation for SMRs is left to future work.
 
-The DynAIRx project is focussing on conditions from the Quality and Outcomes Framework (QOF)~\cite{roland2016quality} and, in a process that included reviews by clinicians, mapped 4724 SNOMED Clinical Term codes to 25 conditions that were based on QOF conditions~\cite{aslam2025automation}.
+
+The final step of our design study was to implement and illustrate the final charts using primary care data about patients' conditions from Clinical Practice Research Datalink (CPRD)~\cite{cprd} in a Python package.
+
+The DynAIRx project focuses on conditions from the Quality and Outcomes Framework (QOF)~\cite{roland2016quality} and, in a process that included reviews by clinicians, mapped 4724 SNOMED Clinical Term codes to 25 conditions that were based on QOF conditions~\cite{aslam2025automation}.
 
 \begin{figure*}[!h]
   \centering
@@ -26,9 +28,8 @@ The DynAIRx project is focussing on conditions from the Quality and Outcomes Fra
   \label{fig:cprd-nto-gantt-line-heatmap}
 \end{figure*}
 
-We filtered the CPRD observation table so that it only contained records for the SNOMED codes in the mapping, and then extracted the data for the 2,165,067 patients who had four or more of the conditions.
-Descriptive statistics were calculated for the number of unique SNOMED code dates, the average gap beween those dates and the time-span (max date - min date) for each patient/condition combination.
-To illustrate the shortlist charts with histories that may be considered typical of patients with multiple long-term conditions, we selected the patients who had 4 -- 6 conditions and had at least one condition that was in the inter-quartile range for the number of unique dates, average gap and time-span.
+We filtered the CPRD observation table so that it only contained records for the SNOMED codes in the mapping, and then extracted the data for the 2,165,067 patients who had four or more of the conditions. Descriptive statistics were calculated for the number of unique SNOMED code dates, the average gap between those dates and the time-span (max date - min date) for each patient/condition combination.
+To illustrate the charts with histories that may be considered typical of patients with multiple long-term conditions, we selected the patients who had 4 -- 6 conditions and had at least one condition that was in the inter-quartile range for the number of unique dates, average gap and time-span (see Figure \ref{fig:cprd-nto-gantt-line-heatmap}).
 
 % N (list; pie)
 The names of conditions are suitable for answering questions such as ``Has anybody ever mentioned something called COPD to you?'' and for that nominal data the two visualization techniques on the shortlist were a list (table) and a pie chart.
@@ -41,8 +42,8 @@ However, a pie chart would not be appropriate for patients with the most complex
 Other questions involved nominal and temporal data, e.g., ``Did that [diabetes] start later on''.
 The two shortlisted visualization techniques were Gantt and line charts, which both display continuous data.
 Each row in a medical record indicates an event (e.g., a diagnosis, a prescription or a test result) that occurred on a specific date.
-The SNOMED codes mapped to each condition~\cite{aslam2025automation} provide ongoing ongoing indicators that a patient still has (or is being investigated for) a given condition, so our approach is to graphically join together condition events that occur within a certain threshold (e.g., a year) of the previous one into a bar (Gantt chart) or a line.
-Events that do not satisfy the threshold are shown as discrete vertical lines (Gantt chart) or dots (line charts), as illustrated in Figure~\ref{fig:cprd-nt-gantt-line}.
+The SNOMED codes mapped to each condition~\cite{aslam2025automation} provide ongoing indicators that a patient still has (or is being investigated for) a given condition, so our approach is to graphically join condition events that occur within a certain threshold (e.g., a year) of the previous one into a bar (Gantt chart) or a line.
+Events that do not satisfy the threshold are shown as discrete vertical lines (Gantt chart) or dots (line charts), as illustrated in Figure~\ref{fig:cprd-nto-gantt-line-heatmap}.
 
 % NTO (Gantt; line; heatmap)
 % Some questions (e.g., Have you ever had any specialist pain advice?) involved nominal, temporal and ordinal data because the underlying implication was that the patients condition was or had become severe. Such information is generally recorded in the free text notes associated with an event, but those notes are not provided with CPRD datasets because of the risk that such notes may contain confidential information. Therefore, we used the frequency of events as a proxy to illustrate how ordinal data could be added to the three shortlisted visualization techniques -- Gantt charts, line charts and heatmaps (see Figure~\ref{fig:cprd-nto-gantt-line-heatmap}). The heatmap divides time into fixed intervals, which give a less accurate impression of a patent's time history than the Gantt or line chart.

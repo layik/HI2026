@@ -25,6 +25,42 @@
 \usepackage[T1]{fontenc}
 \usepackage{array}
 
+% ---------------------------------------------------
+% ORCID inline only (no SCITEPRESS ORCID list)
+% and no green boxes around links
+% ---------------------------------------------------
+\usepackage{orcidlink}
+
+\makeatletter
+
+% Load hyperref if SCITEPRESS/orcidlink hasn't already
+\@ifpackageloaded{hyperref}{}{%
+  \usepackage{hyperref}
+}
+
+% Now, after everything is loaded, force link style: no boxes
+\AtBeginDocument{%
+  \hypersetup{
+    hidelinks,          % no colored boxes
+    colorlinks=false,   % links not colored
+    pdfborder={0 0 0},  % no visible border in PDF
+    allcolors=black     % fallback if colorlinks=true somewhere
+  }%
+}
+
+% Override SCITEPRESS ORCID macro: inline only, no separate list
+\renewcommand{\orcidAuthor}[1]{\,\orcidlink{#1}}
+
+% Disable any ORCID list collector macros if defined
+\@ifundefined{@orcidlist}{}{%
+  \renewcommand{\@orcidlist}{}%
+}
+\@ifundefined{@addorcid}{}{%
+  \renewcommand{\@addorcid}[1]{}%
+}
+
+\makeatother
+
 % % no package needed
 % \makeatletter
 % % Make \cite print just the label (no brackets) inside our macro
@@ -48,36 +84,37 @@
 
 \title{Patient History Visualization for Structured Medication Reviews: a design study}
 
-% \author{\authorname{
-% L. Hama\sup{10}\orcidAuthor{0000-0003-1912-4890}, 
-% R.A. Ruddle\sup{10}\orcidAuthor{0000-0001-8662-8103}, 
-% A.S. Abuzour\sup{1,2}\orcidAuthor{0000-0002-4073-4346}, 
-% M. Abaho\sup{3}\orcidAuthor{0000-0001-5433-5904}, 
-% A. Aslam\sup{2,8}\orcidAuthor{0000-0002-2654-4255}, 
-% D. Bollegala\sup{3}\orcidAuthor{0000-0003-4476-7003}, 
-% A. Clegg\sup{1,2}\orcidAuthor{0000-0001-5972-1097}, 
-% M. Gabbay\sup{3}\orcidAuthor{0000-0002-0126-8485}, 
-% F.S. Mair\sup{5}\orcidAuthor{0000-0001-9780-1135}, 
-% M. O’Connell\sup{6}\orcidAuthor{0000-0001-9658-495X}, 
-% S. Relton\sup{2,8}\orcidAuthor{0000-0003-0634-4587}, 
-% E. Shantsila\sup{3}\orcidAuthor{0000-0002-2429-6980}, 
-% M. Sperrin\sup{6}\orcidAuthor{0000-0002-5351-9960}, 
-% S.A. Wilson\sup{3}\orcidAuthor{0000-0002-7959-052X}, 
-% A.A. Woodall\sup{3,4}\orcidAuthor{0000-0003-2933-0508}, 
-% I. Buchan\sup{3}\orcidAuthor{0000-0003-3392-1650}, 
-% L.E. Walker\sup{3}\orcidAuthor{0000-0002-3827-4387}
-% }}
+\author{
+\authorname{
+L. Hama\sup{10}\orcidAuthor{0000-0003-1912-4890},
+R.A. Ruddle\sup{10}\orcidAuthor{0000-0001-8662-8103},
+A.S. Abuzour\sup{1,2}\orcidAuthor{0000-0002-4073-4346},
+M. Abaho\sup{3}\orcidAuthor{0000-0001-5433-5904},
+A. Aslam\sup{2,8}\orcidAuthor{0000-0002-2654-4255},
+D. Bollegala\sup{3}\orcidAuthor{0000-0003-4476-7003},
+A. Clegg\sup{1,2}\orcidAuthor{0000-0001-5972-1097},
+M. Gabbay\sup{3}\orcidAuthor{0000-0002-0126-8485},
+F.S. Mair\sup{5}\orcidAuthor{0000-0001-9780-1135},
+M. O'Connell\sup{6}\orcidAuthor{0000-0001-9658-495X},
+S. Relton\sup{2,8}\orcidAuthor{0000-0003-0634-4587},
+E. Shantsila\sup{3}\orcidAuthor{0000-0002-2429-6980},
+M. Sperrin\sup{6}\orcidAuthor{0000-0002-5351-9960},
+S.A. Wilson\sup{3}\orcidAuthor{0000-0002-7959-052X},
+A.A. Woodall\sup{3,4}\orcidAuthor{0000-0003-2933-0508},
+I. Buchan\sup{3}\orcidAuthor{0000-0003-3392-1650},
+L.E. Walker\sup{3}\orcidAuthor{0000-0002-3827-4387}
+}
+\affiliation{\small\sup{1}Bradford Teaching Hospitals NHS Foundation Trust, Bradford, UK}
+\affiliation{\sup{2}School of Medicine, University of Leeds, Leeds, UK}
+\affiliation{\sup{3}University of Liverpool, Liverpool, UK}
+\affiliation{\sup{4}Directorate of Mental Health and Learning Disabilities, Powys Teaching Health Board, Bronllys, UK}
+\affiliation{\sup{5}School of Health and Wellbeing, University of Glasgow, Glasgow, UK}
+\affiliation{\sup{6}University of Manchester, Manchester, UK}
+\affiliation{\sup{8}Leeds Institute for Data Analytics, University of Leeds, Leeds, UK}
+\affiliation{\sup{10}School of Computing, University of Leeds, Leeds, UK}
+\email{email:layik.hama@gmail.com}
+}
 
-% \affiliation{\sup{1}Bradford Teaching Hospitals NHS Foundation Trust, Bradford, UK}
-% \affiliation{\sup{2} School of Medicine, University of Leeds, Leeds, UK}
-% \affiliation{\sup{3}University of Liverpool, Liverpool, UK}
-% \affiliation{\sup{4}Directorate of Mental Health and Learning Disabilities, Powys Teaching Health Board, Bronllys, UK}
-% \affiliation{\sup{5}School of Health and Wellbeing, University of Glasgow, Glasgow, UK}
-% \affiliation{\sup{6}University of Manchester, Manchester, UK}
-% \affiliation{\sup{8}Leeds Institute for Data Analytics, University of Leeds, Leeds, UK}
-% \affiliation{\sup{10}School of Computing, University of Leeds, Leeds, UK}
-
-% \email{layik.hama@gmail.com}
 
 \keywords{Patient History Visualization, deprescription visualization}
 
@@ -106,9 +143,8 @@ visualization-literate researchers to rate how effectively each chart communicat
 
 \section*{\uppercase{Acknowledgements}}
 
-The acknowledgments section is redacted for the double-blind review purpose.
-% This study is funded by the National Institute for Health Research (NIHR) under its Programme Artificial Intelligence for Multiple and Long-Term Conditions (NIHR 203986). The views expressed are those of the author(s) and not necessarily those of the NIHR or the Department of Health and Social Care.
-% The authors acknowledge the use of the LASER platform, assistance provided by the Data Analytics Team in Leeds Institute for Data Analytics (University of Leeds).
+This study is funded by the National Institute for Health Research (NIHR) under its Programme Artificial Intelligence for Multiple and Long-Term Conditions (NIHR 203986). The views expressed are those of the author(s) and not necessarily those of the NIHR or the Department of Health and Social Care. The authors acknowledge the use of the LASER platform, assistance provided by the Data Analytics Team in Leeds Institute for Data Analytics (University of Leeds). M. Gabbay is part funded by the National Institute of Health and Care Research Applied Research Collaboration North West Coast
+
 % \textbf{Thank you to + other attributes before publication.}
 
 
@@ -122,4 +158,3 @@ The acknowledgments section is redacted for the double-blind review purpose.
 % If any, the appendix should appear directly after the references without numbering, and not on a new page. To do so please use the following command: \textit{$\backslash$section*\{APPENDIX\}}
 
 \end{document}
-
